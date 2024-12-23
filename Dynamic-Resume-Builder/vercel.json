@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "Dynamic-Resume-Builder/dynamic.html",
+        "src": "dynamic.html",
         "use": "@vercel/static"
       }
     ],
     "routes": [
       {
-        "src": "/",
-        "dest": "/Dynamic-Resume-Builder/dynamic.html"
+        "src": "/(.*)",
+        "dest": "/dynamic.html"
       }
     ]
   }
