@@ -10,6 +10,14 @@
       {
         "src": "/(.*)",
         "dest": "/dynamic.html"
+      },
+      {
+        "src": "/css/(.*)",
+        "dest": "/css/$1"
+      },
+      {
+        "src": "/dist/(.*)",
+        "dest": "/dist/$1"
       }
     ]
   }
