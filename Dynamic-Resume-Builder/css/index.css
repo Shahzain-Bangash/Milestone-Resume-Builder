@@ -1,229 +1,177 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-*{
-    margin: 0%;
-    padding: 0%;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-body{
-    font-family:"Montserrat", serif;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-html{
-    font: 62.5%;
+                            /* Form Styles */
+
+.form-section {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 8px;
 }
 
-p,li{
-    font-size: 1rem;
-    margin-bottom: 0.5em;
-}
-
-ul li a{
-    font-size: 1.6rem;
-    letter-spacing: 0.15em;
-    text-decoration: none;
-}
-h1,h2,h3{
-    margin-bottom: 0.5em;
-    font-weight: 500;
-}
-
-
-/* ############# Utility Classes ############*/
-
-
-.lg-heading{
-    font-size: 3.3rem;
-}
-.md-heading{
-    font-size: 2.2rem;
-}
-
-.text-bold{
-    font-weight: 600;
-}
-
-.text.gray{
-    color: rgb(100, 97, 97);
-}
-.text-white{
-    color: white;
-}
-
-
-/* ###############  Section styling ###########*/
-
-section{
-    width: 75%;
-    height: 52rem;
-    margin: 2rem auto;
-    border: 2px solid gray;
-    border-radius: 1rem;
+.form-group {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-/* ########## Left Side Styling ########### */
-
-.left-div {
-    border: 2px solid black;
-    border-radius: 0.8rem;
-    width: 40%;
-    height: 100%;
-    background-color: #2d2c2c;
-    /* border-radius: 20rem; */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 96%, 0% 100%);
+input, textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
-.img-div{                        /* Image Part */
-    border: 3px solid white;
-    border-radius: 10rem;
-    margin: 1rem auto;
-    width: 50%;
-    height: 11.5rem;
+textarea {
+    height: 100px;
+    resize: vertical;
 }
-.img-div img{
-    width: 100%;
-    height: 100%;
-    border-radius: 10rem;
+
+.education-entry, .work-entry,.skill-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 4px;
 }
-.about-div{                        /* About Part */
-    /* border: 1px solid white; */
-    letter-spacing: 0.5px;
-    line-height: 1.3em;
-    margin: 0% auto;
+
+.add-btn {
+    background-color: #4a90e2;
     color: white;
-    width: 90%;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
 }
-.about-para{
-    font-size: 0.9rem;
-}
-.personal-div{                  /* Personal information Part */
-    /* border: 1px solid white; */
-    letter-spacing: 0.5px;
-    line-height: 1.3em;
-    margin: 1rem auto 0rem auto;
+
+.generate-btn {
+    background-color: #2ecc71;
     color: white;
-    width: 90%;
-}
-.personal-div ul li{
-    list-style-position: inside;
-}
-.personal-div li a{
-    text-decoration: none;
-    color: inherit;
-}
-.personal-div .email-li a{
-    font-size: 0.9rem;
-}
-.personal-div .linkedin-li a{
-    font-size: 0.3rem;
-}
-.email-li:hover,.linkedin-li:hover{
-    color: rgb(101, 245, 245);
-}
-
-
-
-/* ############ Right Side Styling ############### */
-
-.right-div{
-    /* border: 2px solid blue; */
-    width: 60%;
-    background-color: #f7f5f5;
-    border-radius: 0.8rem;
-}
-.name-div{
-    position: relative;
-    background-color: #2d2c2c;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     width: 100%;
-    height: 8rem;
-    margin: 2rem 0 0;
-    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 1rem;
 }
 
-.head-2{
-    position: absolute;
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
+                            /* Preview Styles */
+
+.preview-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.name-div .head-2::after{
-    content: "";
-    display: block;
-    border: 2px solid white;
-    width: 7rem;
-    margin: 0.4rem auto;
-    border-radius: 0.2rem;
-}   
-
-/* ############ Education div Styling ########### */
-
-.information-div{
-    /* border: 2px solid red; */
-    padding: 2rem 0 0 1.5rem;
+.preview-header {
+    margin-bottom: 2rem;
 }
-.information-div .ed-text::after{     /* Education Part */
-    content: "";
-    display: block;
-    border: 1.4px solid black;
-    width: 7.7rem;
-}   
-.information-div .sk-text::after{        /* Skills Part */
-    content: "";
-    display: block;
-    border: 1.4px solid black;
-    width: 4rem;
-}    
-.information-div .ex-text::after{       /* Experience Part */
-    content: "";
-    display: block;
-    border: 1.4px solid black;
-    width: 13.2rem;
-}   
 
-.btn-div{                               /* Button Part */
-    /* border: 2px solid black; */
-    margin: 2rem 0 0 0;
-    text-align: center;
-}
-.btn-div #toggle-button{
+.preview-header p {
+    font-size: 1rem;
     display: inline-block;
-    background-color: rgb(217, 248, 238);
-    width: 5.5rem;
-    height: 2.5rem;
-    border-radius: 1rem;
-}
-#toggle-button:hover{
-    background-color: rgb(187, 240, 223) ;
-}
-@media only screen and (min-width:300px) and (max-width:1100px) {
-        section{
-            height: auto;
-        }
-        .left-div{
-            height: auto;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 96%, 0% 100%);
-        }
-}   
-@media only screen  and (min-width: 300px) and (max-width:900px) {
-    .left-div{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0% 100%);
-    }
-}
-
-@media only screen and (min-width:300px) and (max-width:650px) {
-    section{
-        min-width: 650px;
-    }
-}
-
-
+    color: #666;
 
     
+}
+.contact-info {
+    /* border: 2px solid red; */
+    font-size: 0.9rem;
+    line-height: 33px;
+}
+.contact-info p{
+    /* border: 2px solid black; */
+    display: inline-block;  
+    color: #666;
+}
+
+.preview-about, .preview-education, .preview-work,.preview-skills {
+    margin-bottom: 2rem;
+    
+}
+
+.preview-about p{
+
+    color: #666;
+}
+
+                            /* Education Section */
+
+.education-item{
+    margin-bottom: 0.5rem;
+}
+.education-item h4 ,p{
+    color: #666;
+    font-weight: 500;
+    display: inline-block;
+    line-height: 30px;
+}
+.education-item span{
+    line-height: 30px;
+}
+                                /*Skill Section  */
+.skill-item h4{
+    display: flex;
+    line-height: 30px;
+    color: #666;
+}
+
+                                /* Work Experience */
+
+.work-item h4,p{
+    font-weight: 500;
+    display: inline-block;
+    line-height: 30px;
+    color: #666;
+}
+.work-item span{
+    line-height: 30px;
+}
 
 
 
+h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .form-section {
+        display: none;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-section {
+        box-shadow: none;
+    }
+}
